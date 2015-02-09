@@ -1,89 +1,181 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node',
-1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
 1 verbose cli   'install',
-1 verbose cli   '--save-dev',
-1 verbose cli   'gulp-inyect' ]
+1 verbose cli   '-g',
+1 verbose cli   'gulp-connect' ]
 2 info using npm@1.4.28
-3 info using node@v0.10.32
-4 warn package.json GlipsLandingPage@0.0.1 No README data
-5 verbose readDependencies using package.json deps
-6 verbose cache add [ 'gulp-inyect', null ]
-7 verbose cache add name=undefined spec="gulp-inyect" args=["gulp-inyect",null]
-8 verbose parsed url { protocol: null,
-8 verbose parsed url   slashes: null,
-8 verbose parsed url   auth: null,
-8 verbose parsed url   host: null,
-8 verbose parsed url   port: null,
-8 verbose parsed url   hostname: null,
-8 verbose parsed url   hash: null,
-8 verbose parsed url   search: null,
-8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: 'gulp-inyect',
-8 verbose parsed url   path: 'gulp-inyect',
-8 verbose parsed url   href: 'gulp-inyect' }
-9 silly lockFile c9d7075b-gulp-inyect gulp-inyect
-10 verbose lock gulp-inyect /root/.npm/c9d7075b-gulp-inyect.lock
-11 silly lockFile c9d7075b-gulp-inyect gulp-inyect
-12 silly lockFile c9d7075b-gulp-inyect gulp-inyect
-13 verbose addNamed [ 'gulp-inyect', '' ]
-14 verbose addNamed [ null, '*' ]
-15 silly lockFile bc3eca24-gulp-inyect gulp-inyect@
-16 verbose lock gulp-inyect@ /root/.npm/bc3eca24-gulp-inyect.lock
-17 silly addNameRange { name: 'gulp-inyect', range: '*', hasData: false }
-18 verbose request where is /gulp-inyect
-19 verbose request registry http://registry.npmjs.org/
-20 verbose request id 5da513590991715b
-21 verbose url raw /gulp-inyect
-22 verbose url resolving [ 'http://registry.npmjs.org/', './gulp-inyect' ]
-23 verbose url resolved http://registry.npmjs.org/gulp-inyect
-24 verbose request where is http://registry.npmjs.org/gulp-inyect
-25 info trying registry request attempt 1 at 21:22:37
-26 http GET http://registry.npmjs.org/gulp-inyect
-27 http 404 http://registry.npmjs.org/gulp-inyect
-28 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-28 verbose headers   'content-type': 'application/json',
-28 verbose headers   'cache-control': 'max-age=0',
-28 verbose headers   'content-length': '52',
-28 verbose headers   'accept-ranges': 'bytes',
-28 verbose headers   date: 'Mon, 08 Dec 2014 02:22:38 GMT',
-28 verbose headers   via: '1.1 varnish',
-28 verbose headers   age: '0',
-28 verbose headers   'x-served-by': 'cache-jfk1029-JFK',
-28 verbose headers   'x-cache': 'MISS, MISS from servercachev4',
-28 verbose headers   'x-cache-hits': '0',
-28 verbose headers   'x-timer': 'S1418005357.923969,VS0,VE76',
-28 verbose headers   'x-cache-lookup': 'MISS from servercachev4:3128',
-28 verbose headers   connection: 'close' }
-29 silly registry.get cb [ 404,
-29 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-29 silly registry.get     'content-type': 'application/json',
-29 silly registry.get     'cache-control': 'max-age=0',
-29 silly registry.get     'content-length': '52',
-29 silly registry.get     'accept-ranges': 'bytes',
-29 silly registry.get     date: 'Mon, 08 Dec 2014 02:22:38 GMT',
-29 silly registry.get     via: '1.1 varnish',
-29 silly registry.get     age: '0',
-29 silly registry.get     'x-served-by': 'cache-jfk1029-JFK',
-29 silly registry.get     'x-cache': 'MISS, MISS from servercachev4',
-29 silly registry.get     'x-cache-hits': '0',
-29 silly registry.get     'x-timer': 'S1418005357.923969,VS0,VE76',
-29 silly registry.get     'x-cache-lookup': 'MISS from servercachev4:3128',
-29 silly registry.get     connection: 'close' } ]
-30 silly lockFile bc3eca24-gulp-inyect gulp-inyect@
-31 silly lockFile bc3eca24-gulp-inyect gulp-inyect@
-32 error 404 404 Not Found: gulp-inyect
-32 error 404
-32 error 404 'gulp-inyect' is not in the npm registry.
-32 error 404 You should bug the author to publish it
-32 error 404 It was specified as a dependency of 'GlipsLandingPage'
-32 error 404
-32 error 404 Note that you can also install from a
-32 error 404 tarball, folder, or http url, or git url.
-33 error System Linux 3.2.0-72-generic
-34 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save-dev" "gulp-inyect"
-35 error cwd /home/ramon/DeveloperFront/glipsLanding
-36 error node -v v0.10.32
-37 error npm -v 1.4.28
-38 error code E404
-39 verbose exit [ 1, true ]
+3 info using node@v0.10.35
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'gulp-connect', null ]
+6 verbose cache add name=undefined spec="gulp-connect" args=["gulp-connect",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'gulp-connect',
+7 verbose parsed url   path: 'gulp-connect',
+7 verbose parsed url   href: 'gulp-connect' }
+8 silly lockFile 08293c24-gulp-connect gulp-connect
+9 verbose lock gulp-connect /home/rchancay/.npm/08293c24-gulp-connect.lock
+10 silly lockFile 08293c24-gulp-connect gulp-connect
+11 silly lockFile 08293c24-gulp-connect gulp-connect
+12 verbose addNamed [ 'gulp-connect', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 7e07fb61-gulp-connect gulp-connect@
+15 verbose lock gulp-connect@ /home/rchancay/.npm/7e07fb61-gulp-connect.lock
+16 silly addNameRange { name: 'gulp-connect', range: '*', hasData: false }
+17 verbose request where is /gulp-connect
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id ee0f70ca3ecfc1f6
+20 verbose url raw /gulp-connect
+21 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-connect' ]
+22 verbose url resolved https://registry.npmjs.org/gulp-connect
+23 verbose request where is https://registry.npmjs.org/gulp-connect
+24 info trying registry request attempt 1 at 16:56:58
+25 verbose etag "129O92QLQ29THVXJFSOERDIXE"
+26 http GET https://registry.npmjs.org/gulp-connect
+27 http 304 https://registry.npmjs.org/gulp-connect
+28 silly registry.get cb [ 304,
+28 silly registry.get   { date: 'Mon, 09 Feb 2015 21:56:42 GMT',
+28 silly registry.get     server: 'Apache',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'last-modified': 'Mon, 09 Feb 2015 21:56:42 GMT',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     etag: '"129O92QLQ29THVXJFSOERDIXE"',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-jfk1030-JFK',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1423519002.887041,VS0,VE76',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'content-length': '0',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 verbose etag https://registry.npmjs.org/gulp-connect from cache
+30 silly addNameRange number 2 { name: 'gulp-connect', range: '*', hasData: true }
+31 silly addNameRange versions [ 'gulp-connect',
+31 silly addNameRange   [ '0.0.1',
+31 silly addNameRange     '0.1.1',
+31 silly addNameRange     '0.1.2',
+31 silly addNameRange     '0.1.3',
+31 silly addNameRange     '0.1.4',
+31 silly addNameRange     '0.1.5',
+31 silly addNameRange     '0.1.6',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.3.1',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.9.0',
+31 silly addNameRange     '1.0.0',
+31 silly addNameRange     '1.0.1',
+31 silly addNameRange     '1.0.2',
+31 silly addNameRange     '1.0.3',
+31 silly addNameRange     '1.0.4',
+31 silly addNameRange     '1.0.5',
+31 silly addNameRange     '1.0.6',
+31 silly addNameRange     '1.0.7',
+31 silly addNameRange     '1.0.9',
+31 silly addNameRange     '1.0.10',
+31 silly addNameRange     '1.1.0',
+31 silly addNameRange     '1.1.1',
+31 silly addNameRange     '2.0.0',
+31 silly addNameRange     '2.0.1',
+31 silly addNameRange     '2.0.2',
+31 silly addNameRange     '2.0.3',
+31 silly addNameRange     '2.0.4',
+31 silly addNameRange     '2.0.5',
+31 silly addNameRange     '2.0.6',
+31 silly addNameRange     '2.1.0',
+31 silly addNameRange     '2.2.0' ] ]
+32 verbose addNamed [ 'gulp-connect', '2.2.0' ]
+33 verbose addNamed [ '2.2.0', '2.2.0' ]
+34 silly lockFile 00c0891a-gulp-connect-2-2-0 gulp-connect@2.2.0
+35 verbose lock gulp-connect@2.2.0 /home/rchancay/.npm/00c0891a-gulp-connect-2-2-0.lock
+36 silly lockFile 00c0891a-gulp-connect-2-2-0 gulp-connect@2.2.0
+37 silly lockFile 00c0891a-gulp-connect-2-2-0 gulp-connect@2.2.0
+38 silly lockFile 7e07fb61-gulp-connect gulp-connect@
+39 silly lockFile 7e07fb61-gulp-connect gulp-connect@
+40 silly resolved [ { name: 'gulp-connect',
+40 silly resolved     version: '2.2.0',
+40 silly resolved     description: 'Gulp plugin to run a webserver (with LiveReload)',
+40 silly resolved     license: 'MIT',
+40 silly resolved     repository: { type: 'git', url: 'git://github.com/avevlad/gulp-connect' },
+40 silly resolved     authors: [ [Object], [Object], [Object] ],
+40 silly resolved     scripts: { test: 'mocha' },
+40 silly resolved     engines: { node: '>=0.10.0' },
+40 silly resolved     keywords: [ 'gulpfriendly', 'connect', 'livereload', 'webserver', 'server' ],
+40 silly resolved     dependencies:
+40 silly resolved      { 'gulp-util': '~2.2.14',
+40 silly resolved        'event-stream': '~3.1.0',
+40 silly resolved        'connect-livereload': '~0.3.2',
+40 silly resolved        'tiny-lr': '^0.0.7',
+40 silly resolved        connect: '<2.18.0' },
+40 silly resolved     devDependencies:
+40 silly resolved      { gulp: '~3.5.1',
+40 silly resolved        'gulp-stylus': '0.0.11',
+40 silly resolved        mocha: '^1.18.2',
+40 silly resolved        supertest: '^0.10.0' },
+40 silly resolved     gitHead: '45d69b989be3eac282a5767de07db59ea6bc3ef0',
+40 silly resolved     bugs: { url: 'https://github.com/avevlad/gulp-connect/issues' },
+40 silly resolved     homepage: 'https://github.com/avevlad/gulp-connect',
+40 silly resolved     _id: 'gulp-connect@2.2.0',
+40 silly resolved     _shasum: 'ff665df039647dc2c0d4ef12bb783a9584aac3cd',
+40 silly resolved     _from: 'gulp-connect@',
+40 silly resolved     _npmVersion: '2.1.4',
+40 silly resolved     _nodeVersion: '0.10.32',
+40 silly resolved     _npmUser: { name: 'avevlad', email: 'dev@vld.me' },
+40 silly resolved     maintainers: [ [Object] ],
+40 silly resolved     dist:
+40 silly resolved      { shasum: 'ff665df039647dc2c0d4ef12bb783a9584aac3cd',
+40 silly resolved        tarball: 'http://registry.npmjs.org/gulp-connect/-/gulp-connect-2.2.0.tgz' },
+40 silly resolved     directories: {},
+40 silly resolved     _resolved: 'https://registry.npmjs.org/gulp-connect/-/gulp-connect-2.2.0.tgz',
+40 silly resolved     readme: 'ERROR: No README data found!' } ]
+41 info install gulp-connect@2.2.0 into /usr/lib
+42 info installOne gulp-connect@2.2.0
+43 verbose lib/node_modules/gulp-connect unbuild
+44 verbose tar unpack /home/rchancay/.npm/gulp-connect/2.2.0/package.tgz
+45 silly lockFile d4aac8f3-sr-lib-node-modules-gulp-connect tar:///usr/lib/node_modules/gulp-connect
+46 verbose lock tar:///usr/lib/node_modules/gulp-connect /home/rchancay/.npm/d4aac8f3-sr-lib-node-modules-gulp-connect.lock
+47 silly lockFile 579a2ff4-m-gulp-connect-2-2-0-package-tgz tar:///home/rchancay/.npm/gulp-connect/2.2.0/package.tgz
+48 verbose lock tar:///home/rchancay/.npm/gulp-connect/2.2.0/package.tgz /home/rchancay/.npm/579a2ff4-m-gulp-connect-2-2-0-package-tgz.lock
+49 silly gunzTarPerm modes [ '775', '664' ]
+50 error Error: EACCES, mkdir '/usr/lib/node_modules/gulp-connect'
+50 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/gulp-connect']
+50 error   errno: 3,
+50 error   code: 'EACCES',
+50 error   path: '/usr/lib/node_modules/gulp-connect',
+50 error   fstream_type: 'Directory',
+50 error   fstream_path: '/usr/lib/node_modules/gulp-connect',
+50 error   fstream_class: 'DirWriter',
+50 error   fstream_stack:
+50 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+50 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+50 error      'Object.oncomplete (fs.js:108:15)' ] }
+51 error Please try running this command again as root/Administrator.
+52 error System Linux 3.5.0-54-generic
+53 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "gulp-connect"
+54 error cwd /home/rchancay/eluniverso/searchapi
+55 error node -v v0.10.35
+56 error npm -v 1.4.28
+57 error path /usr/lib/node_modules/gulp-connect
+58 error fstream_path /usr/lib/node_modules/gulp-connect
+59 error fstream_type Directory
+60 error fstream_class DirWriter
+61 error code EACCES
+62 error errno 3
+63 error stack Error: EACCES, mkdir '/usr/lib/node_modules/gulp-connect'
+64 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+64 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+64 error fstream_stack Object.oncomplete (fs.js:108:15)
+65 verbose exit [ 3, true ]
