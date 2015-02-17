@@ -71,7 +71,7 @@ gulp.task('watch', function() {
 	
 gulp.task('default', ['server', 'inject', 'wiredep', 'watch']);
 
-var gulpif = require('gulp-if'),
+var gulpif     = require('gulp-if'),
 	minifyCss  = require('gulp-minify-css'),
 	useref     = require('gulp-useref'),
 	uglify     = require('gulp-uglify'),
@@ -85,6 +85,7 @@ gulp.task('compress',function() {
 
 	gulp.src('./app/*.html')
 		.pipe(assets)
+		.pipe(gulpif('*.css',minifyCss({keepSpecialComments : 0})))
 		.pipe(gulpif('*.js', uglify({mangle: false })))
 		.pipe(assets.restore())
 		.pipe(useref())
@@ -98,15 +99,15 @@ gulp.task('compress',function() {
 });
 
 gulp.task('uncss', function() {
-	gulp.src('./build/stylesheets/main.min.css')
-		.pipe(uncss({
-			html: ['./app/index.html']
-		}))
-		.pipe(minifyCss())
-		.pipe(gulp.dest('./build/stylesheets'));
+	setTimeout(function(){
+		gulp.src('./build/stylesheets/main.min.css')
+			.pipe(uncss({
+				html: ['./app/index.html']
+			}))
+			.pipe(minifyCss({keepSpecialComments : 0}))
+			.pipe(gulp.dest('./build/stylesheets'));
+	},2000);
 });
-
-
 
 gulp.task('build',['compress','uncss']);
 
