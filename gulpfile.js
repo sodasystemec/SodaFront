@@ -75,17 +75,17 @@ var gulpif = require('gulp-if'),
 	minifyCss  = require('gulp-minify-css'),
 	useref     = require('gulp-useref'),
 	uglify     = require('gulp-uglify'),
-	minifyHTML = require('gulp-minify-html');
+	minifyHTML = require('gulp-minify-html'),
+	uncss      = require('gulp-uncss');
 
 
 gulp.task('compress',function() {
 	var assets = useref.assets(),
 	opts = { comments:false };
-	
+
 	gulp.src('./app/*.html')
 		.pipe(assets)
 		.pipe(gulpif('*.js', uglify({mangle: false })))
-		.pipe(gulpif('*.css', minifyCss()))
 		.pipe(assets.restore())
 		.pipe(useref())
 		.pipe(gulp.dest('./build'));
@@ -97,7 +97,18 @@ gulp.task('compress',function() {
 	},1000);
 });
 
-gulp.task('build',['compress']);
+gulp.task('uncss', function() {
+	gulp.src('./build/stylesheets/main.min.css')
+		.pipe(uncss({
+			html: ['./app/index.html']
+		}))
+		.pipe(minifyCss())
+		.pipe(gulp.dest('./build/stylesheets'));
+});
+
+
+
+gulp.task('build',['compress','uncss']);
 
 gulp.task('server-build',function(){
 	connect.server({
