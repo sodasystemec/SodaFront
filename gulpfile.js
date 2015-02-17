@@ -71,30 +71,37 @@ gulp.task('watch', function() {
 	
 gulp.task('default', ['server', 'inject', 'wiredep', 'watch']);
 
-var gulpif     = require('gulp-if'),
- 	minifyCss  = require('gulp-minify-css'),
- 	useref     = require('gulp-useref'),
- 	uglify     = require('gulp-uglify');
+var gulpif = require('gulp-if'),
+	minifyCss  = require('gulp-minify-css'),
+	useref     = require('gulp-useref'),
+	uglify     = require('gulp-uglify'),
+	minifyHTML = require('gulp-minify-html');
 
-gulp.task('compress',function(){
-	gulp.src('./app/index.html')
-		.pipe(useref.assets())
-		.pipe(gulpif('*.js',uglify({mangle: false})))
-		.pipe(gulpif('*.css',minifyCss()))
-		.pipe(gulp.dest('./dist'));
-});
 
-gulp.task('copy',function(){
-	gulp.src('./app/index.html')
+gulp.task('compress',function() {
+	var assets = useref.assets(),
+	opts = { comments:false };
+	
+	gulp.src('./app/*.html')
+		.pipe(assets)
+		.pipe(gulpif('*.js', uglify({mangle: false })))
+		.pipe(gulpif('*.css', minifyCss()))
+		.pipe(assets.restore())
 		.pipe(useref())
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./build'));
+	
+	setTimeout(function(){
+		gulp.src('./build/*.html')
+			.pipe(minifyHTML(opts))
+			.pipe(gulp.dest('./build'));
+	},1000);
 });
 
-gulp.task('build',['compress','copy']);
+gulp.task('build',['compress']);
 
-gulp.task('server-dist',function(){
+gulp.task('server-build',function(){
 	connect.server({
-		root: './dist',
+		root: './build',
 		hostname: '0.0.0.0',
 		port: 8080,
 		livereload: true,
