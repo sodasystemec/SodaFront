@@ -13,10 +13,11 @@ var gulp    = require('gulp'),
 	Pageres = require('pageres');
 
 
+var devices = ['1024x768','480x320','1800x968','iphone5s'];
 
 gulp.task('shot', function(){
 	var pageres = new Pageres({delay:4})
-		.src('ramonchancay.com',['1024x768','480x320','iphone5s'],{crop:false})
+		.src('ramonchancay.com',devices,{crop:false})
 		.dest('./app/captures/');
 
 	pageres.run(function(err){
