@@ -8,7 +8,24 @@ var gulp    = require('gulp'),
 	stylish = require('jshint-stylish'),
 	inject  = require('gulp-inject'),
 	wiredep = require('wiredep').stream,
-	historyApiFallback = require('connect-history-api-fallback');
+	historyApiFallback = require('connect-history-api-fallback'),
+	rupture = require('rupture'),
+	Pageres = require('pageres');
+
+
+
+gulp.task('shot', function(){
+	var pageres = new Pageres({delay:4})
+		.src('ramonchancay.com',['1024x768','480x320','iphone5s'],{crop:false})
+		.dest('./app/captures/');
+
+	pageres.run(function(err){
+		if(err){
+			throw err;
+		}
+		console.log('Capturas realizadas');
+	});
+});
 
 gulp.task('inject', function() {
 	var sources = gulp.src(['./app/scripts/**/*.js','./app/stylesheets/**/*.css']);
@@ -50,8 +67,8 @@ gulp.task('jshint', function() {
 
 
 gulp.task('css', function() {
-	gulp.src('./app/stylus/**/*.styl')
-		.pipe(stylus({ use: nib() }))
+	gulp.src('./app/stylus/**/main.styl')
+		.pipe(stylus({ use: [nib(),rupture()] }))
 		.pipe(gulp.dest('./app/stylesheets'))
 		.pipe(connect.reload());
 });
