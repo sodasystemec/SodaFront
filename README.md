@@ -1,6 +1,6 @@
 ## _Flujo de Trabajo con Glup_
 
-Flujo de trabajo simple, para utilizar stylus, livereload y gulp en tus proyectos de 
+Flujo de trabajo simple, para utilizar less, livereload y gulp en tus proyectos de 
 frontend.
 
 

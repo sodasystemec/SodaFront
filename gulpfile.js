@@ -2,31 +2,14 @@
 
 var gulp    = require('gulp'),
 	connect = require('gulp-connect'),
-	stylus  = require('gulp-stylus'),
+	less  = require('gulp-less'),
 	nib     = require('nib'),
 	jshint  = require('gulp-jshint'),
 	stylish = require('jshint-stylish'),
 	inject  = require('gulp-inject'),
 	wiredep = require('wiredep').stream,
-	historyApiFallback = require('connect-history-api-fallback'),
-	rupture = require('rupture'),
-	Pageres = require('pageres');
+	historyApiFallback = require('connect-history-api-fallback');
 
-
-var devices = ['1024x768','480x320','1800x968','iphone5s'];
-
-gulp.task('shot', function(){
-	var pageres = new Pageres({delay:4})
-		.src('ramonchancay.com',devices,{crop:false})
-		.dest('./app/captures/');
-
-	pageres.run(function(err){
-		if(err){
-			throw err;
-		}
-		console.log('Capturas realizadas');
-	});
-});
 
 gulp.task('inject', function() {
 	var sources = gulp.src(['./app/scripts/**/*.js','./app/stylesheets/**/*.css']);
@@ -68,10 +51,10 @@ gulp.task('jshint', function() {
 
 
 gulp.task('css', function() {
-	gulp.src('./app/stylus/**/main.styl')
-		.pipe(stylus({ use: [nib(),rupture()] }))
+	gulp.src('./app/less/**/*.less')
+		.pipe(less())
 		.pipe(gulp.dest('./app/stylesheets'))
-		.pipe(connect.reload());
+
 });
 
 
@@ -82,7 +65,7 @@ gulp.task('html', function() {
 
 gulp.task('watch', function() {
 	gulp.watch(['./app/**/*.html'],['html']);
-	gulp.watch(['./app/stylus/**/*.styl'], ['css', 'inject']);
+	gulp.watch(['./app/less/**/*.less'], ['css', 'inject']);
 	gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);
 	gulp.watch(['./bower.json'], ['wiredep']);
 });
